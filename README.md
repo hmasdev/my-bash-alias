@@ -21,6 +21,15 @@ For example,
    git clone https://github.com/hmasdev/my-bash-alias.git && cd my-bash-alias && . ./myalias.sh
    ```
 
+If you want to use permanently the aliases in `myalias.sh`,
+download the `myalias.sh` and add its content to `~/.bashrc`.
+
+```bash
+curl https://raw.githubusercontent.com/hmasdev/my-bash-alias/main/myalias.sh >> ~/.bashrc
+```
+
+**Be sure to use `>>`!**
+
 ## LICENSE
 
 - [MIT](./LICENSE)
