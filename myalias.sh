@@ -4,6 +4,7 @@ alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
+alias mkd='mkdir'
 alias psux='ps ux'
 
 # git
