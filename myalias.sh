@@ -40,6 +40,7 @@ avenv() {
 # docker
 alias db='docker build'
 alias di='docker images'
+alias diq='docker images -q'
 alias dr='docker run'
 alias dc='docker compose'
 alias dcu='docker compose up'
