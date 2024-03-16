@@ -16,7 +16,9 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gl='git log'
 alias gp='git push'
+alias gpull='git pull'
 alias gs='git status'
+alias gt='git tag'
 # github cli
 alias ghcs="gh copilot suggest"
 
