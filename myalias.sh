@@ -1,14 +1,17 @@
 # alias
 alias c='cd'
+alias gr='grep'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias mkd='mkdir'
 alias psux='ps ux'
+alias wh='which'
 
 # git
 alias ga='git add'
+alias gb='git branch'
 alias gc='git commit'
 alias gch='git checkout'
 alias gchb='git checkout -b'
@@ -32,6 +35,7 @@ alias py='python'
 alias vpy='python -m venv venv'
 alias wpy='which python'
 alias wpip="which pip"
+alias pyt="pytest"
 alias jup='python -m jupyter lab'
 avenv() {
     if [ -e "$1/bin/activate" ]; then source "$1/bin/activate";
