@@ -43,6 +43,11 @@ avenv() {
     else echo "Virtual environment activation script not found."; fi
 }
 
+# npm
+alias npmi='npm install'
+alias npmt='npm test'
+alias npmr='npm run'
+
 # docker
 alias db='docker build'
 alias di='docker images'
