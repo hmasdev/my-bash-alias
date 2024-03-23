@@ -45,6 +45,7 @@ avenv() {
     elif [ -e "$1/Scripts/activate" ]; then source "$1/Scripts/activate";
     else echo "Virtual environment activation script not found."; fi
 }
+alias vpya='python -m venv venv ; avenv venv'
 
 # npm
 alias npmi='npm install'
