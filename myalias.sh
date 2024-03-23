@@ -23,6 +23,8 @@ alias gp='git push'
 alias gpull='git pull'
 alias gs='git status'
 alias gt='git tag'
+alias gta='git tag -a'
+alias gtd='git tag -d'
 # github cli
 alias ghcs="gh copilot suggest"
 
