@@ -1,6 +1,7 @@
 # alias
 alias c='cd'
 alias gr='grep'
+alias k9='kill -9'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
