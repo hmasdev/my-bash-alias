@@ -41,8 +41,9 @@ alias wpip="which pip"
 alias pyt="pytest"
 alias jup='python -m jupyter lab'
 avenv() {
-    if [ -e "$1/bin/activate" ]; then source "$1/bin/activate";
-    elif [ -e "$1/Scripts/activate" ]; then source "$1/Scripts/activate";
+    local env_path=${1:-./venv}  # Default to './venv' if no argument is provided
+    if [ -e "$env_path/bin/activate" ]; then source "$env_path/bin/activate";
+    elif [ -e "$env_path/Scripts/activate" ]; then source "$env_path/Scripts/activate";
     else echo "Virtual environment activation script not found."; fi
 }
 alias vpya='python -m venv venv ; avenv venv'
