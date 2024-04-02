@@ -27,8 +27,6 @@ alias gs='git status'
 alias gt='git tag'
 alias gta='git tag -a'
 alias gtd='git tag -d'
-# github cli
-alias ghcs="gh copilot suggest"
 
 # pyenv
 alias pg='pyenv global'
