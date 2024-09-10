@@ -22,6 +22,7 @@ alias gf='git fetch'
 alias ginit='git init; git commit --allow-empty -m'
 alias gl='git log'
 alias gp='git push'
+alias gpu='git push -u origin'
 alias gpull='git pull'
 alias gs='git status'
 alias gt='git tag'
@@ -35,18 +36,23 @@ alias pv='pyenv versions'
 
 # python
 alias py='python'
-alias vpy='python -m venv venv'
+alias vpy='python -m venv .venv'
 alias wpy='which python'
 alias wpip="which pip"
 alias pyt="pytest"
 alias jup='python -m jupyter lab'
 avenv() {
-    local env_path=${1:-./venv}  # Default to './venv' if no argument is provided
+    local env_path=${1:-./.venv}  # Default to './.venv' if no argument is provided
     if [ -e "$env_path/bin/activate" ]; then source "$env_path/bin/activate";
     elif [ -e "$env_path/Scripts/activate" ]; then source "$env_path/Scripts/activate";
     else echo "Virtual environment activation script not found."; fi
 }
-alias vpya='python -m venv venv --upgrade-deps ; avenv venv'
+alias vpya='python -m venv .venv --upgrade-deps ; avenv .venv'
+# python:uv
+alias upip='uv pip'
+alias uva='uv add'
+alias uvs='uv sync'
+alias uvr='uv run'
 
 # npm
 alias npmi='npm install'
