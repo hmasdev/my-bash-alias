@@ -50,7 +50,7 @@ avenv() {
 alias vpya='python -m venv .venv --upgrade-deps ; avenv .venv'
 # python:uv
 alias upip='uv pip'
-alias uva='uv python'
+alias uva='uv add'
 alias uvs='uv sync'
 alias uvr='uv run'
 
