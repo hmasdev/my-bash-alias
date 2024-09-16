@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -xe
 # const
 test_workspace='./test-git_workspace'
 test_file='a.txt'

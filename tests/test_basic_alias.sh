@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -xe
 # const
 test_workspace="./test-workspace"
 test_direc="./test-directory"
