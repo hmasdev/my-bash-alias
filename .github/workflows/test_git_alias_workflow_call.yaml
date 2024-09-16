@@ -21,10 +21,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.git-ref }}
-      - name: Install requirements
+      - name: Setup
         run: |
-          echo "Installing requirements..."
           # apt-get install git
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: test
         run: |
           . ./tests/test_git_alias.sh
