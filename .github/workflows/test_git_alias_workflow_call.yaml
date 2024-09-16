@@ -1,0 +1,30 @@
+name: test_git_alias
+
+on:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        required: false
+        type: string
+        default: "main"
+  workflow_call:
+    inputs:
+      git-ref:
+        required: false
+        type: string
+        default: "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.git-ref }}
+      - name: Install requirements
+        run: |
+          echo "Installing requirements..."
+          # apt-get install git
+      - name: test
+        run: |
+          . ./tests/test_git_alias.sh
