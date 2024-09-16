@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 set -xe
 # const
 test_workspace='./test-python_pyenv_workspace'
