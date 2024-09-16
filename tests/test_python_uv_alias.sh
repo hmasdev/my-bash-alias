@@ -15,7 +15,7 @@ python -m venv .venv
 source .venv/bin/activate
 .venv/bin/python -m pip install uv
 
-uv .venv
+uv venv
 upip install schedule
 uva ruquests
 uvs
