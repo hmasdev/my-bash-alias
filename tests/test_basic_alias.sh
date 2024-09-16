@@ -1,4 +1,5 @@
 #!/bin/bash -l
+shopt -s expand_aliases
 set -xe
 # const
 test_workspace="./test-workspace"
