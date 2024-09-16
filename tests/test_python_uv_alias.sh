@@ -11,8 +11,8 @@ rm -rf $test_workspace || echo "$test_workspace not found"
 uv init $test_workspace
 pushd $test_workspace
 
-upip install schedule
 uva ruquests
+upip install schedule
 uvs
 uvr which python
 
