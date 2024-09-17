@@ -30,7 +30,7 @@ gl -n 1
 gta "0.0.0" -m "init"
 gt
 gtd "0.0.0"
-gch main
+gch master
 
 
 popd
