@@ -39,5 +39,7 @@ jobs:
           pyenv -v
       - name: test
         run: |
+          . ~/.profile
+          . ~/.bash_profile
           . ~/.bashrc
           . ./tests/test_python_pyenv_alias.sh
