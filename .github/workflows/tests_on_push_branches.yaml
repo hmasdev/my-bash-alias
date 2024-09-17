@@ -1,0 +1,28 @@
+name: Tests On Push Branches
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  test_basic_alias_workflow_call:
+    uses: ./.github/workflows/test_basic_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}
+  test_git_alias_workflow_call:
+    uses: ./.github/workflows/test_git_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}
+  test_python_alias_workflow_call:
+    uses: ./.github/workflows/test_python_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}
+  test_python_uv_alias_workflow_call:
+    uses: ./.github/workflows/test_python_uv_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}
+  test_python_pyenv_alias_workflow_call:
+    uses: ./.github/workflows/test_python_pyenv_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}

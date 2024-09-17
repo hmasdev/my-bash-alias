@@ -1,0 +1,45 @@
+name: test_python_uv_alias
+
+on:
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        required: false
+        type: string
+        default: "main"
+  workflow_call:
+    inputs:
+      git-ref:
+        required: false
+        type: string
+        default: "main"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.git-ref }}
+      - name: Setup
+        run: |
+          git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+          echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+          echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+          echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+          echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+          echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+          echo 'eval "$(pyenv init -)"' >> ~/.profile
+          echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+          echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+          echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+          source ~/.profile
+          source ~/.bash_profile
+          source ~/.bashrc
+          pyenv -v
+      - name: test
+        run: |
+          . ~/.profile
+          . ~/.bash_profile
+          . ~/.bashrc
+          . ./tests/test_python_pyenv_alias.sh
