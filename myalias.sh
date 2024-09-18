@@ -70,3 +70,32 @@ alias dcr='docker compose run'
 
 # vscode
 alias co='code'
+
+# Update bashrc
+update_my_bash_alias(){
+    # const.
+    _BASHRC=${1:-"~/.bashrc"}
+    _NEW_MYALIAS=".myalias.sh"
+    _START_LINE="######StartMyBashAlias######"
+    _END_LINE="######EndMyBashAlias######"
+    _URL=https://raw.githubusercontent.com/hmasdev/my-bash-alias/main/myalias.sh
+    # perparation
+    touch $_BASHRC
+    # download myalias.sh
+    curl -sf $_URL > $_NEW_MYALIAS
+    # branch if START_LINE or END_LINE do NOT exists
+    if ! grep -q "$START_LINE" $_BASHRC || ! grep -q "$END_LINE" $_BASHRC; then
+        echo "Adding alias to $_BASHRC"
+        # delete START_LINE and END_LINE
+        sed -i "s/$START_LINE//g" $_BASHRC
+        sed -i "s/$END_LINE//g" $_BASHRC
+        # add START_LINE, mybash.sh, and END_LINE
+        echo "$START_LINE" >> $_BASHRC
+        cat $_NEW_MYALIAS >> $_BASHRC
+        echo "$END_LINE" >> $_BASHRC
+    else
+        echo "Updating alias in $_BASHRC"
+        sed -i "/$START_LINE/,/$END_LINE/{//!d}" $_BASHRC  # delete lines between START_LINE and END_LINE
+        sed -i "/$START_LINE/r $_NEW_MYALIAS" $_BASHRC  # add new_content after START_LINE
+    fi
+}
