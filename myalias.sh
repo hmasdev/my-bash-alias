@@ -82,7 +82,7 @@ alias co='code'
 # Update bashrc
 update_my_bash_alias(){
     # const.
-    _BASHRC=${1:-"~/.bashrc"}
+    _BASHRC=${1:-"$HOME/.bashrc"}
     _NEW_MYALIAS=".myalias.sh"
     _START_LINE="######StartMyBashAlias######"
     _END_LINE="######EndMyBashAlias######"
