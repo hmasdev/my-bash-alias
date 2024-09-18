@@ -10,7 +10,9 @@ Simple aliases available in `bash`
 
 ## How to Use
 
-The usage is very simple.
+### Temporary Use
+
+It is very simple to use `my-bash-alias` temporarily.
 Just download and run the `myalias.sh`.
 
 For example,
@@ -27,14 +29,22 @@ For example,
    git clone https://github.com/hmasdev/my-bash-alias.git && cd my-bash-alias && . ./myalias.sh
    ```
 
+### Permanent Use
+
 If you want to use permanently the aliases in `myalias.sh`,
 download the `myalias.sh` and add its content to `~/.bashrc`.
 
+First, you should follow [Temporary Use](#temporary-use).
+Then run the following command:
+
 ```bash
-curl https://raw.githubusercontent.com/hmasdev/my-bash-alias/main/myalias.sh >> ~/.bashrc
+update_my_bash_alias
 ```
 
-**Be sure to use `>>`!**
+`update_my_bash_alias` writes [the latest version of `myalias.sh`](https://raw.githubusercontent.com/hmasdev/my-bash-alias/main/myalias.sh) into update `~/.bashrc`.
+
+Note that `update_my_bash_alias` uses 2 comments, `######StartMyBashAlias######` and `#####EndMyBashAlias######` to identify the section to update.
+So you should NOT use these comments in `~/.bashrc`.
 
 ## How to Contribute
 
