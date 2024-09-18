@@ -29,6 +29,14 @@ alias gt='git tag'
 alias gta='git tag -a'
 alias gtd='git tag -d'
 
+# ghcs/ghce
+# if gh command exists and ghcs command does not exist,
+# then call `eval "$(gh copilot alias -- bash)"`
+# TODO: implement test for ghcs/ghce
+if command -v gh &> /dev/null && ! command -v ghcs &> /dev/null; then
+    eval "$(gh copilot alias -- bash)"
+fi
+
 # pyenv
 alias pg='pyenv global'
 alias pl='pyenv local'
