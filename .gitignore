@@ -1,2 +1,6 @@
 .vscode
 ./test-*/
+
+# created for test
+.bashrc.alt
+.myalias.sh
