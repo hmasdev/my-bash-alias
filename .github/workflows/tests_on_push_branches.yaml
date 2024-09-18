@@ -26,3 +26,7 @@ jobs:
     uses: ./.github/workflows/test_python_pyenv_alias_workflow_call.yaml
     with:
       git-ref: ${{ github.ref }}
+  test_update_bashrc:
+    uses: ./.github/workflows/test_update_bashrc.yaml
+    with:
+      git-ref: ${{ github.ref }}
