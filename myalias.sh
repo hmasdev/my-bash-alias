@@ -10,6 +10,11 @@ alias mkd='mkdir'
 alias psux='ps ux'
 alias wh='which'
 
+# tar
+alias tarc='tar -cvzf'
+alias tart='tar -tvzf'
+alias tarx='tar -xvzf'
+
 # git
 alias ga='git add'
 alias gb='git branch'

@@ -30,3 +30,7 @@ jobs:
     uses: ./.github/workflows/test_update_bashrc.yaml
     with:
       git-ref: ${{ github.ref }}
+  test_tar_alias_workflow_call:
+    uses: ./.github/workflows/test_tar_alias_workflow_call.yaml
+    with:
+      git-ref: ${{ github.ref }}
