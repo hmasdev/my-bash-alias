@@ -18,3 +18,5 @@ jobs:
     uses: ./.github/workflows/test_python_pyenv_alias_workflow_call.yaml
   test_update_bashrc:
     uses: ./.github/workflows/test_update_bashrc.yaml
+  test_tar_alias_workflow_call:
+    uses: ./.github/workflows/test_tar_alias_workflow_call.yaml
