@@ -98,18 +98,18 @@ update_my_bash_alias(){
     # download myalias.sh
     curl -sf $_URL > $_NEW_MYALIAS
     # branch if _START_LINE or _END_LINE do NOT exists
-    if ! grep -q "$_START_LINE" $_BASHRC || ! grep -q "$_END_LINE" $_BASHRC; then
+    if ! grep -q "^$_START_LINE" $_BASHRC || ! grep -q "^$_END_LINE" $_BASHRC; then
         echo "Adding alias to $_BASHRC"
         # delete _START_LINE and _END_LINE
-        sed -i "s/$_START_LINE//g" $_BASHRC
-        sed -i "s/$_END_LINE//g" $_BASHRC
+        sed -i "s/^$_START_LINE//g" $_BASHRC
+        sed -i "s/^$_END_LINE//g" $_BASHRC
         # add _START_LINE, mybash.sh, and _END_LINE
         echo "$_START_LINE" >> $_BASHRC
         cat $_NEW_MYALIAS >> $_BASHRC
         echo "$_END_LINE" >> $_BASHRC
     else
         echo "Updating alias in $_BASHRC"
-        sed -i "/$_START_LINE/,/$_END_LINE/{//!d}" $_BASHRC  # delete lines between _START_LINE and _END_LINE
-        sed -i "/$_START_LINE/r $_NEW_MYALIAS" $_BASHRC  # add new_content after _START_LINE
+        sed -i "/^$_START_LINE/,/^$_END_LINE/{//!d}" $_BASHRC  # delete lines between _START_LINE and _END_LINE
+        sed -i "/^$_START_LINE/r $_NEW_MYALIAS" $_BASHRC  # add new_content after _START_LINE
     fi
 }
