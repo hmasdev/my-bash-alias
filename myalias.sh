@@ -66,6 +66,7 @@ alias upip='uv pip'
 alias uva='uv add'
 alias uvs='uv sync'
 alias uvr='uv run'
+alias uvenv='uv venv'
 
 # npm
 alias npmi='npm install'
