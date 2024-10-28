@@ -16,4 +16,9 @@ upip install schedule
 uvs
 uvr which python
 
+rm -rf .venv
+uvenv
+upip install requests
+uvr which python
+
 popd
