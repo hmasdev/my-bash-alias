@@ -8,15 +8,29 @@ on:
 jobs:
   test_basic_alias_workflow_call:
     uses: ./.github/workflows/test_basic_alias_workflow_call.yaml
+    permissions:
+      contents: read
   test_git_alias_workflow_call:
     uses: ./.github/workflows/test_git_alias_workflow_call.yaml
+    permissions:
+      contents: read
   test_python_alias_workflow_call:
     uses: ./.github/workflows/test_python_alias_workflow_call.yaml
+    permissions:
+      contents: read
   test_python_uv_alias_workflow_call:
     uses: ./.github/workflows/test_python_uv_alias_workflow_call.yaml
+    permissions:
+      contents: read
   test_python_pyenv_alias_workflow_call:
     uses: ./.github/workflows/test_python_pyenv_alias_workflow_call.yaml
+    permissions:
+      contents: read
   test_update_bashrc:
     uses: ./.github/workflows/test_update_bashrc.yaml
+    permissions:
+      contents: read
   test_tar_alias_workflow_call:
     uses: ./.github/workflows/test_tar_alias_workflow_call.yaml
+    permissions:
+      contents: read
