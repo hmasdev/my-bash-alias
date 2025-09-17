@@ -85,6 +85,9 @@ alias dcr='docker compose run'
 # vscode
 alias co='code'
 
+# make
+alias mk='make'
+
 # Update bashrc
 update_my_bash_alias(){
     # const.
